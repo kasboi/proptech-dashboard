@@ -16,8 +16,21 @@ function ToolbarButton({ icon, label }: ToolbarItemProps) {
   return (
     <Tooltip>
       <TooltipTrigger asChild>
-        <Button variant="ghost" size="icon" className="hover:bg-white/10 relative">
-          <Image src={icon} alt={label} width={20} height={20} className="invert brightness-0" />
+        <Button
+          type="button"
+          variant="ghost"
+          size="icon"
+          className="hover:bg-white/10 relative focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f4c3a]"
+          aria-label={label}
+        >
+          <Image
+            src={icon}
+            alt=""
+            width={20}
+            height={20}
+            className="invert brightness-0"
+            aria-hidden="true"
+          />
         </Button>
       </TooltipTrigger>
       <TooltipContent className="bg-black text-white border-none py-1.5 px-3 rounded-lg text-xs font-semibold">
@@ -29,19 +42,26 @@ function ToolbarButton({ icon, label }: ToolbarItemProps) {
 
 export function DesktopToolbar() {
   const budgetingTrigger = (
-    <Button variant="ghost" size="icon" className="hover:bg-white/10 relative">
+    <Button
+      type="button"
+      variant="ghost"
+      size="icon"
+      className="hover:bg-white/10 relative focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f4c3a]"
+      aria-label="Open budgeting"
+    >
       <Image
         src="/icons/calculator.svg"
-        alt="Calculator"
+        alt=""
         width={20}
         height={20}
         className="invert brightness-0"
+        aria-hidden="true"
       />
     </Button>
   );
 
   return (
-    <div className="hidden md:flex items-center gap-6">
+    <nav className="hidden md:flex items-center gap-6" aria-label="Quick actions" role="toolbar">
       <TooltipProvider>
         {/* Budgeting Dialog */}
         <Tooltip>
@@ -60,13 +80,20 @@ export function DesktopToolbar() {
           <Popover>
             <TooltipTrigger asChild>
               <PopoverTrigger asChild>
-                <Button variant="ghost" size="icon" className="hover:bg-white/10 relative">
+                <Button
+                  type="button"
+                  variant="ghost"
+                  size="icon"
+                  className="hover:bg-white/10 relative focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f4c3a]"
+                  aria-label="Open calendar"
+                >
                   <Image
                     src="/icons/calendar.svg"
-                    alt="Calendar"
+                    alt=""
                     width={20}
                     height={20}
                     className="invert brightness-0"
+                    aria-hidden="true"
                   />
                 </Button>
               </PopoverTrigger>
@@ -88,6 +115,6 @@ export function DesktopToolbar() {
         <ToolbarButton icon="/icons/wallet-2.svg" label="Payout Center" />
         <ToolbarButton icon="/icons/shop.svg" label="Marketplace" />
       </TooltipProvider>
-    </div>
+    </nav>
   );
 }

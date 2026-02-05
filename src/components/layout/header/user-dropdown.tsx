@@ -1,6 +1,7 @@
 "use client";
 
 import { Users, ClipboardList, MessageSquare, MapPin, Lock, LogOut } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import {
   DropdownMenu,
@@ -30,6 +31,7 @@ function UserDropdownMenuItem({ icon, label, variant = "default" }: UserDropdown
         className={
           isDanger ? "text-red-500" : "text-gray-700 transition-colors group-focus:text-gray-900"
         }
+        aria-hidden="true"
       >
         {icon}
       </span>
@@ -48,11 +50,11 @@ const USER = {
 };
 
 const MENU_ITEMS = [
-  { icon: <Users className="h-4 w-4" />, label: "Teams" },
-  { icon: <ClipboardList className="h-4 w-4" />, label: "Snagging" },
-  { icon: <MessageSquare className="h-4 w-4" />, label: "Feedback" },
-  { icon: <MapPin className="h-4 w-4" />, label: "Geo-Bucket" },
-  { icon: <Lock className="h-4 w-4" />, label: "Change password" },
+  { icon: <Users className="h-4 w-4" aria-hidden="true" />, label: "Teams" },
+  { icon: <ClipboardList className="h-4 w-4" aria-hidden="true" />, label: "Snagging" },
+  { icon: <MessageSquare className="h-4 w-4" aria-hidden="true" />, label: "Feedback" },
+  { icon: <MapPin className="h-4 w-4" aria-hidden="true" />, label: "Geo-Bucket" },
+  { icon: <Lock className="h-4 w-4" aria-hidden="true" />, label: "Change password" },
 ];
 
 export function UserDropdown() {
@@ -61,13 +63,19 @@ export function UserDropdown() {
       <DropdownMenu>
         <HoverCardTrigger asChild>
           <DropdownMenuTrigger asChild>
-            <div className="group cursor-pointer outline-none">
-              <Avatar className="w-8 h-8 transition-all duration-200 group-hover:scale-110 border-2 border-transparent group-data-[state=open]:scale-110 group-data-[state=open]:border-white/20">
+            <Button
+              type="button"
+              variant="ghost"
+              className="p-0 h-auto rounded-full focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f4c3a]"
+              aria-label={`User menu for ${USER.name}`}
+              aria-haspopup="menu"
+            >
+              <Avatar className="w-8 h-8 transition-all duration-200 hover:scale-110 border-2 border-transparent data-[state=open]:scale-110 data-[state=open]:border-white/20">
                 <AvatarFallback className="bg-white text-[#0f4c3a] font-bold text-sm">
                   {USER.initials}
                 </AvatarFallback>
               </Avatar>
-            </div>
+            </Button>
           </DropdownMenuTrigger>
         </HoverCardTrigger>
 
@@ -76,8 +84,8 @@ export function UserDropdown() {
           className="w-80 mt-2 border-none shadow-2xl bg-white p-0 overflow-hidden rounded-2xl"
         >
           {/* User Info Header */}
-          <div className="p-4 bg-gray-50/50">
-            <div className="flex items-center gap-3 p-3 rounded-xl border border-gray-100 bg-gray-100 shadow-sm transition-colors cursor-pointer">
+          <div className="p-4 bg-gray-50/50" aria-hidden="true">
+            <div className="flex items-center gap-3 p-3 rounded-xl border border-gray-100 bg-gray-100 shadow-sm transition-colors">
               <Avatar className="h-10 w-10">
                 <AvatarFallback className="bg-[#0f4c3a] text-white text-sm font-bold">
                   {USER.initials}
@@ -91,7 +99,7 @@ export function UserDropdown() {
           </div>
 
           {/* Menu Items */}
-          <div className="py-2">
+          <div className="py-2" role="group" aria-label="Account options">
             {MENU_ITEMS.map((item, index) => (
               <div key={item.label}>
                 <UserDropdownMenuItem icon={item.icon} label={item.label} />
@@ -102,7 +110,7 @@ export function UserDropdown() {
             ))}
             <DropdownMenuSeparator className="mx-4 bg-gray-100" />
             <UserDropdownMenuItem
-              icon={<LogOut className="h-4 w-4" />}
+              icon={<LogOut className="h-4 w-4" aria-hidden="true" />}
               label="Logout"
               variant="danger"
             />
@@ -113,6 +121,7 @@ export function UserDropdown() {
       <HoverCardContent
         align="end"
         className="w-56 mt-2 border-none shadow-xl bg-gray-100 backdrop-blur-sm p-3 pointer-events-none rounded-xl"
+        aria-hidden="true"
       >
         <div className="flex flex-col gap-0.5">
           <h4 className="text-sm font-bold text-gray-900 leading-tight">{USER.name}</h4>

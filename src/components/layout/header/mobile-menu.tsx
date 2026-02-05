@@ -18,12 +18,17 @@ interface MenuItemProps {
 
 function MenuItem({ icon, label }: MenuItemProps) {
   return (
-    <Button variant="ghost" className="w-full justify-start gap-3 h-12 hover:bg-gray-100">
+    <Button
+      type="button"
+      variant="ghost"
+      className="w-full justify-start gap-3 h-12 hover:bg-gray-100"
+    >
       <Image
         src={icon}
-        alt={label}
+        alt=""
         width={20}
         height={20}
+        aria-hidden="true"
         style={{
           filter:
             "invert(27%) sepia(51%) saturate(2878%) hue-rotate(130deg) brightness(95%) contrast(101%)",
@@ -48,12 +53,17 @@ export function MobileMenu() {
   }, []);
 
   const budgetingTrigger = (
-    <Button variant="ghost" className="w-full justify-start gap-3 h-12 hover:bg-gray-100">
+    <Button
+      type="button"
+      variant="ghost"
+      className="w-full justify-start gap-3 h-12 hover:bg-gray-100"
+    >
       <Image
         src="/icons/calculator.svg"
-        alt="Calculator"
+        alt=""
         width={20}
         height={20}
+        aria-hidden="true"
         style={{
           filter:
             "invert(27%) sepia(51%) saturate(2878%) hue-rotate(130deg) brightness(95%) contrast(101%)",
@@ -66,8 +76,15 @@ export function MobileMenu() {
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <Button variant="ghost" size="icon" className="md:hidden hover:bg-white/10">
-          <Menu className="h-5 w-5" />
+        <Button
+          type="button"
+          variant="ghost"
+          size="icon"
+          className="md:hidden hover:bg-white/10"
+          aria-label="Open menu"
+        >
+          <Menu className="h-5 w-5" aria-hidden="true" />
+          <span className="sr-only">Open menu</span>
         </Button>
       </SheetTrigger>
       <SheetContent side="right" className="w-75 bg-white p-0">
@@ -76,21 +93,23 @@ export function MobileMenu() {
             <SheetTitle className="text-lg font-semibold text-white">Menu</SheetTitle>
           </div>
 
-          <div className="flex-1 overflow-y-auto p-4 space-y-2">
+          <nav className="flex-1 overflow-y-auto p-4 space-y-2" aria-label="Mobile menu">
             <TooltipProvider>
               <BudgetingDialog trigger={budgetingTrigger} variant="mobile" />
 
               <Popover>
                 <PopoverTrigger asChild>
                   <Button
+                    type="button"
                     variant="ghost"
                     className="w-full justify-start gap-3 h-12 hover:bg-gray-100"
                   >
                     <Image
                       src="/icons/calendar.svg"
-                      alt="Calendar"
+                      alt=""
                       width={20}
                       height={20}
+                      aria-hidden="true"
                       style={{
                         filter:
                           "invert(27%) sepia(51%) saturate(2878%) hue-rotate(130deg) brightness(95%) contrast(101%)",
@@ -111,7 +130,7 @@ export function MobileMenu() {
               <MenuItem icon="/icons/wallet-2.svg" label="Payout Center" />
               <MenuItem icon="/icons/shop.svg" label="Marketplace" />
             </TooltipProvider>
-          </div>
+          </nav>
         </div>
       </SheetContent>
     </Sheet>
