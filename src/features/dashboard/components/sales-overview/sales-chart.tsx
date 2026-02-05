@@ -1,6 +1,6 @@
 "use client";
 
-import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 import { useSalesData } from "@/features/dashboard/hooks/use-sales-data";
 import { THEME_COLORS } from "@/features/dashboard/constants";
 
@@ -43,7 +43,6 @@ export function SalesChart() {
           barCategoryGap="30%"
           aria-hidden="true"
         >
-          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke={chart.grid} />
           <XAxis
             dataKey="month"
             axisLine={false}
@@ -69,9 +68,27 @@ export function SalesChart() {
             }}
           />
           {/* Creating the clustered bar look with 3 colors matching the design */}
-          <Bar dataKey="value1" fill={chart.purple} radius={[1, 1, 0, 0]} barSize={4} name="Metric 1" />
-          <Bar dataKey="value2" fill={chart.green} radius={[1, 1, 0, 0]} barSize={4} name="Metric 2" />
-          <Bar dataKey="value3" fill={chart.red} radius={[1, 1, 0, 0]} barSize={4} name="Metric 3" />
+          <Bar
+            dataKey="value1"
+            fill={chart.purple}
+            radius={[1, 1, 0, 0]}
+            barSize={4}
+            name="Metric 1"
+          />
+          <Bar
+            dataKey="value2"
+            fill={chart.green}
+            radius={[1, 1, 0, 0]}
+            barSize={4}
+            name="Metric 2"
+          />
+          <Bar
+            dataKey="value3"
+            fill={chart.red}
+            radius={[1, 1, 0, 0]}
+            barSize={4}
+            name="Metric 3"
+          />
         </BarChart>
       </ResponsiveContainer>
     </div>
