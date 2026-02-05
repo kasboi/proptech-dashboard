@@ -26,8 +26,8 @@ function ToolbarButton({ icon, label }: ToolbarItemProps) {
           <Image
             src={icon}
             alt=""
-            width={20}
-            height={20}
+            width={24}
+            height={24}
             className="invert brightness-0"
             aria-hidden="true"
           />
@@ -52,8 +52,8 @@ export function DesktopToolbar() {
       <Image
         src="/icons/calculator.svg"
         alt=""
-        width={20}
-        height={20}
+        width={24}
+        height={24}
         className="invert brightness-0"
         aria-hidden="true"
       />
@@ -90,8 +90,8 @@ export function DesktopToolbar() {
                   <Image
                     src="/icons/calendar.svg"
                     alt=""
-                    width={20}
-                    height={20}
+                    width={24}
+                    height={24}
                     className="invert brightness-0"
                     aria-hidden="true"
                   />
