@@ -5,10 +5,9 @@ import Image from "next/image";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Calendar } from "@/components/ui/calendar";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { BudgetingDialog } from "./budgeting-dialog";
+import { CalendarPopover } from "./calendar-popover";
 
 interface MenuItemProps {
   icon: string;
@@ -23,17 +22,7 @@ function MenuItem({ icon, label }: MenuItemProps) {
       variant="ghost"
       className="w-full justify-start gap-3 h-12 hover:bg-gray-100"
     >
-      <Image
-        src={icon}
-        alt=""
-        width={28}
-        height={28}
-        aria-hidden="true"
-        style={{
-          filter:
-            "invert(27%) sepia(51%) saturate(2878%) hue-rotate(130deg) brightness(95%) contrast(101%)",
-        }}
-      />
+      <Image src={icon} alt="" width={28} height={28} aria-hidden="true" />
       <span className="text-sm font-medium">{label}</span>
     </Button>
   );
@@ -58,17 +47,7 @@ export function MobileMenu() {
       variant="ghost"
       className="w-full justify-start gap-3 h-12 hover:bg-gray-100"
     >
-      <Image
-        src="/icons/calculator.svg"
-        alt=""
-        width={28}
-        height={28}
-        aria-hidden="true"
-        style={{
-          filter:
-            "invert(27%) sepia(51%) saturate(2878%) hue-rotate(130deg) brightness(95%) contrast(101%)",
-        }}
-      />
+      <Image src="/icons/calculator.svg" alt="" width={28} height={28} aria-hidden="true" />
       <span className="text-sm font-medium">Budgeting</span>
     </Button>
   );
@@ -93,12 +72,12 @@ export function MobileMenu() {
             <SheetTitle className="text-lg font-semibold text-white">Menu</SheetTitle>
           </div>
 
-          <nav className="flex-1 overflow-y-auto p-4 space-y-2" aria-label="Mobile menu">
+          <nav className="flex-1 overflow-y-auto p-4 space-y-2 bg-brand" aria-label="Mobile menu">
             <TooltipProvider>
               <BudgetingDialog trigger={budgetingTrigger} variant="mobile" />
 
-              <Popover>
-                <PopoverTrigger asChild>
+              <CalendarPopover
+                trigger={
                   <Button
                     type="button"
                     variant="ghost"
@@ -110,21 +89,11 @@ export function MobileMenu() {
                       width={28}
                       height={28}
                       aria-hidden="true"
-                      style={{
-                        filter:
-                          "invert(27%) sepia(51%) saturate(2878%) hue-rotate(130deg) brightness(95%) contrast(101%)",
-                      }}
                     />
                     <span className="text-sm font-medium">Calendar</span>
                   </Button>
-                </PopoverTrigger>
-                <PopoverContent
-                  align="center"
-                  className="w-80 p-0 border-none shadow-2xl rounded-xl mt-2"
-                >
-                  <Calendar mode="single" className="rounded-md border shadow w-full" />
-                </PopoverContent>
-              </Popover>
+                }
+              />
 
               <MenuItem icon="/icons/activity.svg" label="Search Activity" />
               <MenuItem icon="/icons/wallet-2.svg" label="Payout Center" />

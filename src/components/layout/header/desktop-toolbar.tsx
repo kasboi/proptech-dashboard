@@ -2,10 +2,9 @@
 
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { Calendar } from "@/components/ui/calendar";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import { BudgetingDialog } from "./budgeting-dialog";
+import { CalendarPopover } from "./calendar-popover";
 
 interface ToolbarItemProps {
   icon: string;
@@ -77,34 +76,30 @@ export function DesktopToolbar() {
 
         {/* Calendar Popover */}
         <Tooltip>
-          <Popover>
-            <TooltipTrigger asChild>
-              <PopoverTrigger asChild>
-                <Button
-                  type="button"
-                  variant="ghost"
-                  size="icon"
-                  className="hover:bg-white/10 relative focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand"
-                  aria-label="Open calendar"
-                >
-                  <Image
-                    src="/icons/calendar.svg"
-                    alt=""
-                    width={28}
-                    height={28}
-                    className="invert brightness-0"
-                    aria-hidden="true"
-                  />
-                </Button>
-              </PopoverTrigger>
-            </TooltipTrigger>
-            <PopoverContent
-              align="center"
-              className="w-80 p-0 border-none shadow-2xl rounded-xl mt-2"
-            >
-              <Calendar mode="single" className="rounded-md border shadow w-full" />
-            </PopoverContent>
-          </Popover>
+          <TooltipTrigger asChild>
+            <span>
+              <CalendarPopover
+                trigger={
+                  <Button
+                    type="button"
+                    variant="ghost"
+                    size="icon"
+                    className="hover:bg-white/10 relative focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand"
+                    aria-label="Open calendar"
+                  >
+                    <Image
+                      src="/icons/calendar.svg"
+                      alt=""
+                      width={28}
+                      height={28}
+                      className="invert brightness-0"
+                      aria-hidden="true"
+                    />
+                  </Button>
+                }
+              />
+            </span>
+          </TooltipTrigger>
           <TooltipContent className="bg-black text-white border-none py-1.5 px-3 rounded-lg text-xs font-semibold">
             Calendar
           </TooltipContent>
