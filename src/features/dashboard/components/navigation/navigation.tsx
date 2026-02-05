@@ -26,7 +26,7 @@ function NavItem({ iconPath, label, active }: NavItemProps) {
       <div className="relative w-4.5 h-4.5 flex items-center justify-center">
         <Image
           src={iconPath}
-          alt=""
+          alt="icons"
           width={18}
           height={18}
           aria-hidden="true"
@@ -54,12 +54,12 @@ function MobileNavItem({
         active ? "bg-brand-light text-brand" : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
       )}
     >
-      <div className="relative w-5 h-5 flex items-center justify-center">
+      <div className="relative w-6 h-6 flex items-center justify-center">
         <Image
           src={iconPath}
-          alt=""
-          width={20}
-          height={20}
+          alt="icons"
+          width={24}
+          height={24}
           aria-hidden="true"
           className={cn(active ? "opacity-100" : "opacity-60 grayscale")}
         />

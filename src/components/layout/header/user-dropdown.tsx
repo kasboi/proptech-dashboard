@@ -42,7 +42,6 @@ function UserDropdownMenuItem({ icon, label, variant = "default" }: UserDropdown
   );
 }
 
-// TODO: Replace with actual user data from auth context
 const USER = {
   name: "Dylan Frank",
   email: "dylan96@gmail.com",

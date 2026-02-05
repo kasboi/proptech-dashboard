@@ -11,22 +11,22 @@ export function SalesOverview() {
   const [period, setPeriod] = useState<"1 Week" | "1 Month" | "1 Year">("1 Year");
 
   return (
-    <div className="bg-white rounded-2xl p-5 shadow-sm border border-gray-100 h-full">
+    <div className="bg-white rounded-2xl p-5 border-2 h-full">
       <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-4">
         <div>
-          <h2 className="text-lg font-bold text-gray-900">Sales Overview</h2>
-          <p className="text-gray-500 text-xs mt-1">Showing overview Jan 2022 - Sep 2022</p>
+          <h2 className="text-xl font-bold text-gray-900">Sales Overview</h2>
+          <p className="text-gray-500 text-sm mt-1">Showing overview Jan 2022 - Sep 2022</p>
         </div>
         <Button
           variant="outline"
-          className="text-sm font-medium rounded-2xl h-10 border-gray-200 px-6 hover:bg-gray-50 transition-all"
+          className="text-sm font-medium rounded-full border-gray-300 py-6 px-8 hover:bg-gray-50 transition-all"
         >
           View Transactions
         </Button>
       </div>
 
       <div className="flex justify-end mb-4">
-        <div className="flex bg-surface-muted/50 p-1 rounded-xl">
+        <div className="flex p-1 rounded-xl">
           {(["1 Week", "1 Month", "1 Year"] as const).map((p) => (
             <button
               key={p}
@@ -34,10 +34,10 @@ export function SalesOverview() {
               onClick={() => setPeriod(p)}
               aria-pressed={period === p}
               className={cn(
-                "px-6 py-2 text-xs font-bold rounded-lg transition-all cursor-pointer",
+                "px-6 py-2 text-sm font-medium rounded-lg transition-all cursor-pointer",
                 period === p
-                  ? "bg-white text-gray-900 shadow-sm"
-                  : "text-gray-400 hover:text-gray-900"
+                  ? "bg-gray-100 text-gray-900 font-semibold"
+                  : "text-gray-600 hover:text-gray-900"
               )}
             >
               {p}
@@ -46,7 +46,7 @@ export function SalesOverview() {
         </div>
       </div>
 
-      <div className="border-t border-gray-100 -mx-5 mb-8" />
+      <div className="border-t-2 -mx-5 mb-8" />
 
       <div className="flex flex-col lg:flex-row gap-8">
         <div className="flex-1 relative">

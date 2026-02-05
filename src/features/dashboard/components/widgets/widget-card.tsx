@@ -18,7 +18,7 @@ export function WidgetCard({ title, icon, stats, className }: WidgetCardProps) {
   return (
     <article
       className={cn(
-        "bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 h-full flex flex-col",
+        "bg-white rounded-2xl overflow-hidden border-2 border-gray-100 flex flex-col",
         className
       )}
       aria-labelledby={`widget-title-${title.toLowerCase().replace(/\s+/g, "-")}`}
@@ -27,16 +27,16 @@ export function WidgetCard({ title, icon, stats, className }: WidgetCardProps) {
         <div className="flex items-center gap-3">
           <div className="flex items-center justify-center" aria-hidden="true">
             {isSvgIcon ? (
-              <Image src={icon} alt="" width={18} height={18} aria-hidden="true" />
+              <Image src={icon} alt="" width={24} height={24} aria-hidden="true" />
             ) : icon === "home" ? (
-              <Home className="text-blue-500" size={16} aria-hidden="true" />
+              <Home className="text-blue-500" size={24} aria-hidden="true" />
             ) : (
-              <User className="text-blue-500" size={16} aria-hidden="true" />
+              <User className="text-blue-500" size={24} aria-hidden="true" />
             )}
           </div>
           <h3
             id={`widget-title-${title.toLowerCase().replace(/\s+/g, "-")}`}
-            className="text-sm font-bold text-gray-900"
+            className="text-base font-normal text-gray-900"
           >
             {title}
           </h3>
@@ -50,7 +50,7 @@ export function WidgetCard({ title, icon, stats, className }: WidgetCardProps) {
         </button>
       </div>
 
-      <dl className="p-6 pt-6 pb-6 flex justify-between items-start mt-auto bg-white">
+      <dl className="p-6 pt-6 pb-6 flex justify-between items-start bg-white">
         {stats.map((stat) => (
           <StatItem key={stat.label} label={stat.label} value={stat.value} />
         ))}
