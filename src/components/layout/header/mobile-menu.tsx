@@ -20,9 +20,16 @@ function MenuItem({ icon, label }: MenuItemProps) {
     <Button
       type="button"
       variant="ghost"
-      className="w-full justify-start gap-3 h-12 hover:bg-gray-100"
+      className="w-full justify-start gap-3 h-12 hover:bg-white/10 text-white"
     >
-      <Image src={icon} alt="" width={28} height={28} aria-hidden="true" />
+      <Image
+        src={icon}
+        alt=""
+        width={28}
+        height={28}
+        className="invert brightness-0"
+        aria-hidden="true"
+      />
       <span className="text-sm font-medium">{label}</span>
     </Button>
   );
@@ -45,9 +52,16 @@ export function MobileMenu() {
     <Button
       type="button"
       variant="ghost"
-      className="w-full justify-start gap-3 h-12 hover:bg-gray-100"
+      className="w-full justify-start gap-3 h-12 hover:bg-white/10 text-white"
     >
-      <Image src="/icons/calculator.svg" alt="" width={28} height={28} aria-hidden="true" />
+      <Image
+        src="/icons/calculator.svg"
+        alt=""
+        width={28}
+        height={28}
+        className="invert brightness-0"
+        aria-hidden="true"
+      />
       <span className="text-sm font-medium">Budgeting</span>
     </Button>
   );
@@ -81,13 +95,14 @@ export function MobileMenu() {
                   <Button
                     type="button"
                     variant="ghost"
-                    className="w-full justify-start gap-3 h-12 hover:bg-gray-100"
+                    className="w-full justify-start gap-3 h-12 hover:bg-white/10 text-white"
                   >
                     <Image
                       src="/icons/calendar.svg"
                       alt=""
                       width={28}
                       height={28}
+                      className="invert brightness-0"
                       aria-hidden="true"
                     />
                     <span className="text-sm font-medium">Calendar</span>

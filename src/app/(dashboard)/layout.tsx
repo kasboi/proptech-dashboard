@@ -4,7 +4,7 @@ import { FloatingChatButton } from "@/features/dashboard/components/floating-cha
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="min-h-screen bg-surface-page pb-12 relative">
+    <div className="min-h-screen bg-surface-page pb-4 relative">
       {/* Skip link for keyboard users */}
       <a
         href="#main-content"

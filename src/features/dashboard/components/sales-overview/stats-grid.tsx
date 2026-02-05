@@ -47,7 +47,7 @@ function StatCard({ label, amount, change, isPositive, colorClass }: StatCardPro
 
 export function StatsGrid() {
   return (
-    <div className="grid grid-cols-2 gap-4 h-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 h-full">
       <StatCard
         label="Total Inflow"
         amount="₦120,000,000.00"

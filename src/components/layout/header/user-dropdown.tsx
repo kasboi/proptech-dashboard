@@ -69,7 +69,7 @@ export function UserDropdown() {
               aria-label={`User menu for ${USER.name}`}
               aria-haspopup="menu"
             >
-              <Avatar className="w-8 h-8 transition-all duration-200 hover:scale-110 border-2 border-transparent data-[state=open]:scale-110 data-[state=open]:border-white/20">
+              <Avatar className="w-10 h-10 transition-all duration-200 hover:scale-110 border-2 border-transparent data-[state=open]:scale-110 data-[state=open]:border-white/20">
                 <AvatarFallback className="bg-white text-brand font-bold text-sm">
                   {USER.initials}
                 </AvatarFallback>

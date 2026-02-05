@@ -5,15 +5,16 @@ import { UserDropdown } from "./user-dropdown";
 
 export function Header() {
   return (
-    <header className="bg-brand text-brand-foreground px-4 md:px-6 py-4 flex items-center justify-between">
+    <header className="bg-brand text-brand-foreground px-4 md:px-6 py-4 flex items-center justify-between h-16">
       {/* Logo */}
       <div className="flex items-center gap-2">
-        <div className="flex items-center justify-center relative">
+        <div className="flex items-center justify-center relative h-8">
           <Image
             src="/icons/expertListingLogo.svg"
             alt="Expert Listing Logo"
-            width={200}
-            height={200}
+            width={180}
+            height={40}
+            className="h-8 w-auto"
           />
         </div>
       </div>
