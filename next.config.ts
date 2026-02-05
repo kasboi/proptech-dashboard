@@ -21,7 +21,7 @@ const nextConfig: NextConfig = {
         ignoreBuildErrors: false,
     },
 
-    // Experimental features for Next.js 15
+    // Experimental features for Next.js 16
     experimental: {
         optimizePackageImports: ['lucide-react', 'recharts', 'date-fns'],
     },
@@ -30,13 +30,8 @@ const nextConfig: NextConfig = {
     compress: true,
     poweredByHeader: false,
 
-    // Webpack configuration
-    webpack: (config) => {
-        config.resolve.alias = {
-            ...config.resolve.alias,
-        }
-        return config
-    },
+    // Turbopack configuration (Next.js 16 default bundler)
+    turbopack: {},
 }
 
 export default nextConfig
