@@ -3,10 +3,13 @@ import { WidgetCard } from "@/features/dashboard/components/widgets/widget-card"
 import { PropertyCard } from "@/features/dashboard/components/properties/property-card";
 import { PROPERTIES } from "@/features/dashboard/constants";
 
+// TODO: Replace with actual user data from authentication context
+const USER_NAME = "User";
+
 export default function DashboardPage() {
     return (
         <>
-            <h1 className="text-2xl font-bold text-gray-900 mb-6">Welcome, Ahmed</h1>
+            <h1 className="text-2xl font-bold text-gray-900 mb-6">Welcome, {USER_NAME}</h1>
             <div className="flex flex-col xl:flex-row gap-6 mb-8">
                 <div className="xl:w-[65%] h-full">
                     <SalesOverview />

@@ -91,7 +91,7 @@ export function Navigation() {
 
     return (
         <nav className="bg-white border-b border-gray-200 shadow-sm">
-            <div className="max-w-[1400px] mx-auto px-4 md:px-6 flex items-center justify-between md:justify-center py-2 h-14">
+            <div className="max-w-[--container-2xl] mx-auto px-4 md:px-6 flex items-center justify-between md:justify-center py-2 h-14">
                 <Sheet open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
                     <SheetTrigger asChild>
                         <Button variant="ghost" size="icon" className="md:hidden">
@@ -99,7 +99,7 @@ export function Navigation() {
                             <span className="sr-only">Toggle menu</span>
                         </Button>
                     </SheetTrigger>
-                    <SheetContent side="left" className="w-[280px] bg-white p-0">
+                    <SheetContent side="left" className="w-70 bg-white p-0">
                         <div className="flex flex-col h-full">
                             <div className="bg-[#0f4c3a] text-white p-4">
                                 <SheetTitle className="text-lg font-semibold text-white">Navigation</SheetTitle>

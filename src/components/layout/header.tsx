@@ -63,7 +63,7 @@ export function Header() {
                             <Menu className="h-5 w-5" />
                         </Button>
                     </SheetTrigger>
-                    <SheetContent side="right" className="w-[300px] bg-white p-0">
+                    <SheetContent side="right" className="w-75 bg-white p-0">
                         <div className="flex flex-col h-full">
                     
                             <div className="bg-[#0f4c3a] text-white p-4">
@@ -95,7 +95,7 @@ export function Header() {
                                         </DialogTrigger>
                                         <DialogContent
                                             overlayClassName="bg-transparent"
-                                            className="w-full max-w-[300px] p-0 border-none overflow-hidden rounded-[1.25rem] bg-white text-gray-900"
+                                            className="w-full max-w-75 p-0 border-none overflow-hidden rounded-2xl bg-white text-gray-900"
                                         >
                                             <DialogTitle className="sr-only">Budgeting</DialogTitle>
                                             
@@ -298,7 +298,7 @@ export function Header() {
                                 </TooltipTrigger>
                                 <DialogContent
                                     overlayClassName="bg-transparent"
-                                    className="sm:max-w-[400px] p-0 border-none overflow-hidden rounded-[1.5rem] bg-white text-gray-900"
+                                    className="sm:max-w-100 p-0 border-none overflow-hidden rounded-3xl bg-white text-gray-900"
                                 >
                                     <DialogTitle className="sr-only">Budgeting</DialogTitle>
                                     
@@ -543,7 +543,7 @@ export function Header() {
                                 </DropdownMenuItem>
                                 <DropdownMenuSeparator className="mx-4 bg-gray-100" />
 
-                                <DropdownMenuItem className="px-4 py-2.5 flex items-center gap-3 cursor-pointer focus:bg-gray-50 group hover:bg-red-50 focus:bg-red-50">
+                                <DropdownMenuItem className="px-4 py-2.5 flex items-center gap-3 cursor-pointer group hover:bg-red-50 focus:bg-red-50">
                                     <LogOut className="h-4 w-4 text-red-500" />
                                     <span className="text-sm font-semibold text-red-500">Logout</span>
                                 </DropdownMenuItem>
