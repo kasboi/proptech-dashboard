@@ -26,8 +26,8 @@ function MenuItem({ icon, label }: MenuItemProps) {
       <Image
         src={icon}
         alt=""
-        width={24}
-        height={24}
+        width={28}
+        height={28}
         aria-hidden="true"
         style={{
           filter:
@@ -61,8 +61,8 @@ export function MobileMenu() {
       <Image
         src="/icons/calculator.svg"
         alt=""
-        width={24}
-        height={24}
+        width={28}
+        height={28}
         aria-hidden="true"
         style={{
           filter:
@@ -83,7 +83,7 @@ export function MobileMenu() {
           className="md:hidden hover:bg-white/10"
           aria-label="Open menu"
         >
-          <Menu className="h-6 w-6" aria-hidden="true" />
+          <Menu className="h-7 w-7 stroke-[2.5]" aria-hidden="true" />
           <span className="sr-only">Open menu</span>
         </Button>
       </SheetTrigger>
@@ -107,8 +107,8 @@ export function MobileMenu() {
                     <Image
                       src="/icons/calendar.svg"
                       alt=""
-                      width={24}
-                      height={24}
+                      width={28}
+                      height={28}
                       aria-hidden="true"
                       style={{
                         filter:
