@@ -43,7 +43,7 @@ export function WidgetCard({ title, icon, stats, className }: WidgetCardProps) {
         </div>
         <button
           type="button"
-          className="flex items-center text-blue-600 text-xs font-semibold hover:text-blue-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-sm"
+          className="flex items-center text-blue-600 text-xs font-semibold hover:text-blue-700 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 rounded-sm cursor-pointer"
           aria-label={`View all ${title}`}
         >
           View all <ChevronRight size={14} className="ml-0.5" aria-hidden="true" />

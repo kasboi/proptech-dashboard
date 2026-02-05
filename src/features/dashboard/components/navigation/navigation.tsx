@@ -19,7 +19,7 @@ function NavItem({ iconPath, label, active }: NavItemProps) {
       type="button"
       aria-current={active ? "page" : undefined}
       className={cn(
-        "flex items-center gap-2 px-3 py-1.5 text-sm font-medium transition-colors rounded-xl whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0f4c3a] focus-visible:ring-offset-2",
+        "flex items-center gap-2 px-3 py-1.5 text-sm font-medium transition-colors rounded-xl whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0f4c3a] focus-visible:ring-offset-2 cursor-pointer",
         active
           ? "bg-[#e6f4f1] text-[#0f4c3a]"
           : "text-gray-500 hover:text-gray-700 hover:bg-gray-50"
@@ -52,7 +52,7 @@ function MobileNavItem({
       onClick={onClick}
       aria-current={active ? "page" : undefined}
       className={cn(
-        "flex items-center gap-3 px-4 py-3 text-sm font-medium transition-colors rounded-xl w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0f4c3a] focus-visible:ring-offset-2",
+        "flex items-center gap-3 px-4 py-3 text-sm font-medium transition-colors rounded-xl w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0f4c3a] focus-visible:ring-offset-2 cursor-pointer",
         active
           ? "bg-[#e6f4f1] text-[#0f4c3a]"
           : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
@@ -97,7 +97,7 @@ export function Navigation() {
 
   return (
     <nav className="bg-white border-b border-gray-200 shadow-sm" aria-label="Main navigation">
-      <div className="max-w-[--container-2xl] mx-auto px-4 md:px-6 flex items-center justify-between md:justify-center py-2 h-14">
+      <div className="max-w- mx-auto px-4 md:px-6 flex items-center justify-between md:justify-center py-2 h-14">
         <Sheet open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
           <SheetTrigger asChild>
             <Button
