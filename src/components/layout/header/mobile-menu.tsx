@@ -89,7 +89,7 @@ export function MobileMenu() {
       </SheetTrigger>
       <SheetContent side="right" className="w-75 bg-white p-0">
         <div className="flex flex-col h-full">
-          <div className="bg-[#0f4c3a] text-white p-4">
+          <div className="bg-brand text-brand-foreground p-4">
             <SheetTitle className="text-lg font-semibold text-white">Menu</SheetTitle>
           </div>
 

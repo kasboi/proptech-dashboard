@@ -21,6 +21,35 @@
     /* Transition Durations */
     --transition-duration-400: 400ms;
 
+    /* ===== Brand Colors ===== */
+    /* Primary Brand - Teal Green */
+    --color-brand: #0f4c3a;
+    --color-brand-light: #e6f4f1;
+    --color-brand-foreground: #ffffff;
+    
+    /* Surface Colors */
+    --color-surface-page: #fafbfc;
+    --color-surface-card: #ffffff;
+    --color-surface-elevated: #f8f9fa;
+    --color-surface-muted: #f3f4f6;
+    
+    /* Dark Colors */
+    --color-dark: #1f2937;
+    --color-dark-navy: #0a1e2f;
+    --color-dark-charcoal: #1a1a1a;
+    --color-dark-calendar: #111111;
+    
+    /* Status Colors */
+    --color-positive: #10b981;
+    --color-negative: #ef4444;
+    
+    /* Chart Colors */
+    --color-chart-purple: #4f46e5;
+    --color-chart-green: #10b981;
+    --color-chart-red: #ef4444;
+    --color-chart-grid: #e5e7eb;
+    --color-chart-axis: #9ca3af;
+
     /* Animations */
     --animate-accordion-down: accordion-down 0.2s ease-out;
     --animate-accordion-up: accordion-up 0.2s ease-out;

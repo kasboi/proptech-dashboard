@@ -26,7 +26,7 @@ export function SalesOverview() {
       </div>
 
       <div className="flex justify-end mb-4">
-        <div className="flex bg-[#f3f4f6]/50 p-1 rounded-xl">
+        <div className="flex bg-surface-muted/50 p-1 rounded-xl">
           {(["1 Week", "1 Month", "1 Year"] as const).map((p) => (
             <button
               key={p}

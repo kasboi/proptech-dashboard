@@ -66,12 +66,12 @@ export function UserDropdown() {
             <Button
               type="button"
               variant="ghost"
-              className="p-0 h-auto rounded-full focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f4c3a]"
+              className="p-0 h-auto rounded-full focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand"
               aria-label={`User menu for ${USER.name}`}
               aria-haspopup="menu"
             >
               <Avatar className="w-8 h-8 transition-all duration-200 hover:scale-110 border-2 border-transparent data-[state=open]:scale-110 data-[state=open]:border-white/20">
-                <AvatarFallback className="bg-white text-[#0f4c3a] font-bold text-sm">
+                <AvatarFallback className="bg-white text-brand font-bold text-sm">
                   {USER.initials}
                 </AvatarFallback>
               </Avatar>
@@ -87,7 +87,7 @@ export function UserDropdown() {
           <div className="p-4 bg-gray-50/50" aria-hidden="true">
             <div className="flex items-center gap-3 p-3 rounded-xl border border-gray-100 bg-gray-100 shadow-sm transition-colors">
               <Avatar className="h-10 w-10">
-                <AvatarFallback className="bg-[#0f4c3a] text-white text-sm font-bold">
+                <AvatarFallback className="bg-brand text-brand-foreground text-sm font-bold">
                   {USER.initials}
                 </AvatarFallback>
               </Avatar>

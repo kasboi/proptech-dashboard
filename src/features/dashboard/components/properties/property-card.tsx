@@ -10,7 +10,7 @@ interface PropertyCardProps {
 export function PropertyCard({ property }: PropertyCardProps) {
   return (
     <article
-      className="group relative rounded-2xl overflow-hidden h-64 md:h-80 shadow-md cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0f4c3a] focus-visible:ring-offset-2"
+      className="group relative rounded-2xl overflow-hidden h-64 md:h-80 shadow-md cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
       tabIndex={0}
       role="button"
       aria-label={`View ${property.title} - ${property.label}`}

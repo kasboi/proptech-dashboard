@@ -23,7 +23,7 @@ export function WidgetCard({ title, icon, stats, className }: WidgetCardProps) {
       )}
       aria-labelledby={`widget-title-${title.toLowerCase().replace(/\s+/g, "-")}`}
     >
-      <div className="bg-[#f8f9fa] px-6 py-4 flex items-center justify-between border-b border-gray-100/50">
+      <div className="bg-surface-elevated px-6 py-4 flex items-center justify-between border-b border-gray-100/50">
         <div className="flex items-center gap-3">
           <div className="flex items-center justify-center" aria-hidden="true">
             {isSvgIcon ? (

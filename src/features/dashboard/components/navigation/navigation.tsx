@@ -19,10 +19,8 @@ function NavItem({ iconPath, label, active }: NavItemProps) {
       type="button"
       aria-current={active ? "page" : undefined}
       className={cn(
-        "flex items-center gap-2 px-3 py-1.5 text-sm font-medium transition-colors rounded-xl whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0f4c3a] focus-visible:ring-offset-2 cursor-pointer",
-        active
-          ? "bg-[#e6f4f1] text-[#0f4c3a]"
-          : "text-gray-500 hover:text-gray-700 hover:bg-gray-50"
+        "flex items-center gap-2 px-8 py-1.5 text-sm md:text-base font-medium transition-colors rounded-xl whitespace-nowrap focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 cursor-pointer",
+        active ? "bg-brand-light text-brand" : "text-gray-800 hover:text-gray-700 hover:bg-gray-100"
       )}
     >
       <div className="relative w-4.5 h-4.5 flex items-center justify-center">
@@ -52,10 +50,8 @@ function MobileNavItem({
       onClick={onClick}
       aria-current={active ? "page" : undefined}
       className={cn(
-        "flex items-center gap-3 px-4 py-3 text-sm font-medium transition-colors rounded-xl w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0f4c3a] focus-visible:ring-offset-2 cursor-pointer",
-        active
-          ? "bg-[#e6f4f1] text-[#0f4c3a]"
-          : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
+        "flex items-center gap-3 px-4 py-3 text-sm font-medium transition-colors rounded-xl w-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 cursor-pointer",
+        active ? "bg-brand-light text-brand" : "text-gray-700 hover:text-gray-900 hover:bg-gray-50"
       )}
     >
       <div className="relative w-5 h-5 flex items-center justify-center">
@@ -97,7 +93,7 @@ export function Navigation() {
 
   return (
     <nav className="bg-white border-b border-gray-200 shadow-sm" aria-label="Main navigation">
-      <div className="max-w- mx-auto px-4 md:px-6 flex items-center justify-between md:justify-center py-2 h-14">
+      <div className="max-w-2xl mx-auto px-4 md:px-6 flex items-center justify-between py-2 h-14">
         <Sheet open={mobileNavOpen} onOpenChange={setMobileNavOpen}>
           <SheetTrigger asChild>
             <Button
@@ -112,7 +108,7 @@ export function Navigation() {
           </SheetTrigger>
           <SheetContent side="left" className="w-70 bg-white p-0">
             <div className="flex flex-col h-full">
-              <div className="bg-[#0f4c3a] text-white p-4">
+              <div className="bg-brand text-brand-foreground p-4">
                 <SheetTitle className="text-lg font-semibold text-white">Navigation</SheetTitle>
               </div>
 
@@ -132,7 +128,7 @@ export function Navigation() {
         </Sheet>
 
         <div
-          className="hidden md:flex items-center justify-center gap-10 overflow-x-auto no-scrollbar"
+          className="hidden w-full md:flex items-center justify-between gap-10 overflow-x-auto no-scrollbar"
           role="menubar"
         >
           {navItems.map((item) => (

@@ -1,5 +1,42 @@
 import { ChartDataPoint, Property } from "../types";
 
+/**
+ * Theme Colors for use in JS contexts (charts, etc.)
+ * These mirror the CSS custom properties in globals.css
+ */
+export const THEME_COLORS = {
+    // Brand colors
+    brand: "#0f4c3a",
+    brandLight: "#e6f4f1",
+    brandForeground: "#ffffff",
+    
+    // Surface colors
+    surfacePage: "#fafbfc",
+    surfaceCard: "#ffffff",
+    surfaceElevated: "#f8f9fa",
+    surfaceMuted: "#f3f4f6",
+    
+    // Dark colors
+    dark: "#1f2937",
+    darkNavy: "#0a1e2f",
+    darkCharcoal: "#1a1a1a",
+    darkCalendar: "#111111",
+    
+    // Status colors
+    positive: "#10b981",
+    negative: "#ef4444",
+    
+    // Chart colors
+    chart: {
+        purple: "#4f46e5",
+        green: "#10b981",
+        red: "#ef4444",
+        grid: "#e5e7eb",
+        axis: "#9ca3af",
+        background: "#ffffff",
+    },
+} as const;
+
 export const SALES_DATA: ChartDataPoint[] = [
     { month: "Jan", value1: 35, value2: 28, value3: 10 },
     { month: "Feb", value1: 5, value2: 28, value3: 10 },

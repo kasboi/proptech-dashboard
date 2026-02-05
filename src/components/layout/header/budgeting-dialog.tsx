@@ -59,7 +59,7 @@ export function BudgetingDialogContent({ variant = "desktop" }: BudgetingDialogC
   return (
     <>
       <div
-        className={`bg-[#0a1e2f] ${isMobile ? "p-6" : "p-8"} flex items-center justify-center relative overflow-hidden group`}
+        className={`bg-dark-navy ${isMobile ? "p-6" : "p-8"} flex items-center justify-center relative overflow-hidden group`}
       >
         <div
           className={`absolute top-0 right-0 ${isMobile ? "w-16 h-16 -mr-8 -mt-8" : "w-24 h-24 -mr-12 -mt-12"} bg-blue-500/10 rounded-full blur-2xl`}
@@ -93,7 +93,7 @@ export function BudgetingDialogContent({ variant = "desktop" }: BudgetingDialogC
         </div>
 
         <Button
-          className={`w-full ${isMobile ? "h-10 text-xs" : "h-11 text-sm"} bg-[#1a1a1a] hover:bg-black text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all active:scale-[0.98]`}
+          className={`w-full ${isMobile ? "h-10 text-xs" : "h-11 text-sm"} bg-dark-charcoal hover:bg-black text-white font-bold rounded-xl shadow-md hover:shadow-lg transition-all active:scale-[0.98]`}
         >
           Create Budget
         </Button>

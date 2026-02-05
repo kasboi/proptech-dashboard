@@ -20,7 +20,7 @@ function ToolbarButton({ icon, label }: ToolbarItemProps) {
           type="button"
           variant="ghost"
           size="icon"
-          className="hover:bg-white/10 relative focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f4c3a]"
+          className="hover:bg-white/10 relative focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand"
           aria-label={label}
         >
           <Image
@@ -46,7 +46,7 @@ export function DesktopToolbar() {
       type="button"
       variant="ghost"
       size="icon"
-      className="hover:bg-white/10 relative focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f4c3a]"
+      className="hover:bg-white/10 relative focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand"
       aria-label="Open budgeting"
     >
       <Image
@@ -84,7 +84,7 @@ export function DesktopToolbar() {
                   type="button"
                   variant="ghost"
                   size="icon"
-                  className="hover:bg-white/10 relative focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-[#0f4c3a]"
+                  className="hover:bg-white/10 relative focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-brand"
                   aria-label="Open calendar"
                 >
                   <Image

@@ -2,9 +2,11 @@
 
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer, CartesianGrid } from "recharts";
 import { useSalesData } from "@/features/dashboard/hooks/use-sales-data";
+import { THEME_COLORS } from "@/features/dashboard/constants";
 
 export function SalesChart() {
   const { data } = useSalesData();
+  const { chart } = THEME_COLORS;
 
   // Generate description for screen readers
   const chartDescription = `Bar chart showing monthly sales data from ${data[0]?.month || "January"} to ${data[data.length - 1]?.month || "December"}. The chart displays three metrics per month represented by purple, green, and red bars.`;
@@ -41,18 +43,18 @@ export function SalesChart() {
           barCategoryGap="30%"
           aria-hidden="true"
         >
-          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#e5e7eb" />
+          <CartesianGrid strokeDasharray="3 3" vertical={false} stroke={chart.grid} />
           <XAxis
             dataKey="month"
             axisLine={false}
             tickLine={false}
-            tick={{ fill: "#9ca3af", fontSize: 12 }}
+            tick={{ fill: chart.axis, fontSize: 12 }}
             dy={10}
           />
           <YAxis
             axisLine={false}
             tickLine={false}
-            tick={{ fill: "#9ca3af", fontSize: 10 }}
+            tick={{ fill: chart.axis, fontSize: 10 }}
             tickFormatter={(value) => `${value}m`}
             domain={[0, 50]}
             ticks={[0, 10, 20, 30, 40, 50]}
@@ -60,16 +62,16 @@ export function SalesChart() {
           <Tooltip
             cursor={{ fill: "transparent" }}
             contentStyle={{
-              backgroundColor: "#fff",
+              backgroundColor: chart.background,
               borderRadius: "8px",
               border: "none",
               boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)",
             }}
           />
           {/* Creating the clustered bar look with 3 colors matching the design */}
-          <Bar dataKey="value1" fill="#4f46e5" radius={[1, 1, 0, 0]} barSize={4} name="Metric 1" />
-          <Bar dataKey="value2" fill="#10b981" radius={[1, 1, 0, 0]} barSize={4} name="Metric 2" />
-          <Bar dataKey="value3" fill="#ef4444" radius={[1, 1, 0, 0]} barSize={4} name="Metric 3" />
+          <Bar dataKey="value1" fill={chart.purple} radius={[1, 1, 0, 0]} barSize={4} name="Metric 1" />
+          <Bar dataKey="value2" fill={chart.green} radius={[1, 1, 0, 0]} barSize={4} name="Metric 2" />
+          <Bar dataKey="value3" fill={chart.red} radius={[1, 1, 0, 0]} barSize={4} name="Metric 3" />
         </BarChart>
       </ResponsiveContainer>
     </div>

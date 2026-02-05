@@ -5,7 +5,7 @@ import { UserDropdown } from "./user-dropdown";
 
 export function Header() {
   return (
-    <header className="bg-[#0f4c3a] text-white px-4 md:px-6 py-4 flex items-center justify-between">
+    <header className="bg-brand text-brand-foreground px-4 md:px-6 py-4 flex items-center justify-between">
       {/* Logo */}
       <div className="flex items-center gap-2">
         <div className="w-8 h-8 flex items-center justify-center relative">

@@ -17,11 +17,11 @@ function StatCard({ label, amount, change, isPositive, colorClass }: StatCardPro
 
                 <div className="mt-2.5 flex items-center justify-start gap-1.5">
                     <p className="whitespace-nowrap text-[10.5px] font-medium text-gray-600">{label}</p>
-                    <div className="flex flex-shrink-0 items-center gap-1">
+                    <div className="flex shrink-0 items-center gap-1">
                         <div
                             className={cn(
                                 "flex h-4 w-4 items-center justify-center rounded-full",
-                                isPositive ? "bg-[#10b981]" : "bg-[#ef4444]"
+                                isPositive ? "bg-positive" : "bg-negative"
                             )}
                         >
                             {isPositive ? (
@@ -33,7 +33,7 @@ function StatCard({ label, amount, change, isPositive, colorClass }: StatCardPro
                         <span
                             className={cn(
                                 "text-[11px] font-semibold",
-                                isPositive ? "text-[#10b981]" : "text-[#ef4444]"
+                                isPositive ? "text-positive" : "text-negative"
                             )}
                         >
                             {change}%
